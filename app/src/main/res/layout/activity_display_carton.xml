@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayCarton">
+
+    <TextView
+        android:id="@+id/cLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@id/cLocLabel"
+        android:text="TextView"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/cartonSku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cLoc"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/cartonSkuLabel"
+        android:text="TextView"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/cartonBarcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cartonSku"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/cartonBarcodeLabel"
+        android:text="TextView"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/cLocLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="91dp"
+        android:text="Location: "
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/cartonSkuLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cLocLabel"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="128dp"
+        android:text="SKU: "
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/cartonBarcodeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cartonSkuLabel"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="94dp"
+        android:text="Barcode: "
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="28dp"
+        android:text="Back" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="28dp"
+        android:text="Update" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:text="Delete" />
+</RelativeLayout>
