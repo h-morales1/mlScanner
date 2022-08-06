@@ -5,17 +5,16 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Size
 import android.widget.Toast
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageCapture
-import androidx.camera.core.ImageCaptureException
-import androidx.camera.core.Preview
+import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.mlscanner.databasehelper.DataBaseHandler
 import com.example.mlscanner.databinding.ActivityAddItemBinding
 import com.example.mlscanner.scanning.ImgParser
+import com.example.mlscanner.scanutils.BarcodeAnalyzer
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -114,15 +113,18 @@ class ScanItem : AppCompatActivity() {
                     )
                 }
             //13:22
-            imageCapture = ImageCapture.Builder()
+           val imageAnalyzer = ImageAnalysis.Builder()
+               .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+               .setTargetResolution(Size(1280,720))
                 .build()
+               .also { it.setAnalyzer(ContextCompat.getMainExecutor(this),BarcodeAnalyzer()) }
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
             try {
                 //
                 cameraProvider.unbindAll()
                 cameraProvider.bindToLifecycle(this,
-                    cameraSelector, preview, imageCapture)
+                    cameraSelector, preview, imageAnalyzer)
             } catch (e:Exception) {
                 //
                 Log.d(Constants.TAG,"startCamera failed: ", e)
@@ -144,8 +146,9 @@ class ScanItem : AppCompatActivity() {
                 //camera start
                 startCamera()
             } else {
-                Toast.makeText(this, "Permissions not granted!", Toast.LENGTH_SHORT).show()
-                finish()
+                //Toast.makeText(this, "Permissions not granted!", Toast.LENGTH_SHORT).show()
+                startCamera()
+                //finish()
             }
 
         }

@@ -8,7 +8,8 @@
         <entry key="app/src/main/res/layout/activity_fill_form.xml" value="0.35054347826086957" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_mass_add_carton.xml" value="0.3532608695652174" />
-        <entry key="app/src/main/res/layout/activity_scan_item.xml" value="0.358695652173913" />
+        <entry key="app/src/main/res/layout/activity_scan_carton.xml" value="0.3532608695652174" />
+        <entry key="app/src/main/res/layout/activity_scan_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_sku_search.xml" value="0.2526041666666667" />
       </map>
     </option>

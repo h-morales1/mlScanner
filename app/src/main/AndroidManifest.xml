@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MlScanner">
         <activity
+            android:name=".ScanCarton"
+            android:exported="false" />
+        <activity
             android:name=".MassAddCarton"
             android:exported="true" />
         <activity
